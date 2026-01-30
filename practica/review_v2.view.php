@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-full bg-gray-50">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repaso Estilo por Estilo</title>
-    <script src="http://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="h-full grid place-items-center p-6">
-    <div class="max-w-4xl w-full">
-        <h1 class="text-3xl font-bold mb-8 text-center">
-            Categorías de <?= $business['name'] ?>
+    <div class="max-w-6xl w-full">
+        <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">
+            Categorías de <?= htmlspecialchars($business['name']) ?>
         </h1>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <?php foreach ($business['categories'] as $category): ?>
 
-                <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition duration-300 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transition duration-300 text-center border border-gray-100">
 
                     <div class="text-blue-500 mb-4 flex justify-center">
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -25,21 +27,19 @@
                         </svg>
                     </div>
 
-                    <h2 class="text-xl font-semibold text-gray-700 uppercase tracking-tight">
-                        <?= $category; ?>
+                    <h2 class="text-lg font-semibold text-gray-700 uppercase tracking-tight">
+                        <?= htmlspecialchars($category); ?>
                     </h2>
 
-                    <p class="text-xs font-bold text-blue-600 mt-3 uppercase">
+                    <p class="text-xs font-bold text-blue-600 mt-3 uppercase cursor-pointer hover:text-blue-800">
                         Ver productos →
                     </p>
 
                 </div>
 
             <?php endforeach; ?>
-
         </div>
     </div>
-
 </body>
 
 </html>

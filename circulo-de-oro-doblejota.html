@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Círculo de Oro Doblejota</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .circle {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .circle:hover {
+        transform: scale(1.02);
+        filter: brightness(1.1);
+      }
+      .why-circle {
+        fill: #0047ba;
+      }
+      .how-circle {
+        fill: #ff4d00;
+      }
+      .what-circle {
+        fill: #fee71f;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-50 flex items-center justify-center min-h-screen font-sans"
+  >
+    <div class="max-w-4xl w-full p-8 grid md:grid-cols-2 gap-12 items-center">
+      <!-- SVG del Círculo -->
+      <div class="relative">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <!-- What -->
+          <circle cx="200" cy="200" r="180" class="circle what-circle" />
+          <!-- How -->
+          <circle cx="200" cy="200" r="120" class="circle how-circle" />
+          <!-- Why -->
+          <circle cx="200" cy="200" r="60" class="circle why-circle" />
+
+          <text
+            x="200"
+            y="205"
+            text-anchor="middle"
+            fill="white"
+            font-weight="bold"
+            font-size="14"
+          >
+            WHY
+          </text>
+          <text
+            x="200"
+            y="125"
+            text-anchor="middle"
+            fill="white"
+            font-weight="bold"
+            font-size="14"
+          >
+            HOW
+          </text>
+          <text
+            x="200"
+            y="55"
+            text-anchor="middle"
+            fill="#1d1d1f"
+            font-weight="bold"
+            font-size="14"
+          >
+            WHAT
+          </text>
+        </svg>
+      </div>
+
+      <!-- Textos Explicativos -->
+      <div class="space-y-6">
+        <div class="border-l-4 border-[#0047BA] pl-4">
+          <h3 class="text-[#0047BA] font-bold text-xl uppercase">Why</h3>
+          <p class="text-gray-700">
+            Conectar marcas con personas a través de regalos con propósito,
+            eliminando el caos del proceso.
+          </p>
+        </div>
+        <div class="border-l-4 border-[#FF4D00] pl-4">
+          <h3 class="text-[#FF4D00] font-bold text-xl uppercase">How</h3>
+          <p class="text-gray-700">
+            Asesoría estratégica personalizada y selección experta de productos
+            en menos de 24 horas.
+          </p>
+        </div>
+        <div class="border-l-4 border-[#FEE71F] pl-4">
+          <h3 class="text-[#1d1d1f] font-bold text-xl uppercase">What</h3>
+          <p class="text-gray-700">
+            Objetos promocionales de alta calidad que las personas realmente
+            aman y conservan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

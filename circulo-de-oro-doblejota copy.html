@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doblejota - Círculo de Oro Evolucionado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .circle-group {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+      }
+      .circle-group:hover {
+        transform: scale(1.03);
+      }
+      .why-circle {
+        fill: #0047ba;
+        filter: drop-shadow(0 4px 6px rgba(0, 71, 186, 0.3));
+      }
+      .how-circle {
+        fill: #ff4d00;
+        filter: drop-shadow(0 4px 6px rgba(255, 77, 0, 0.2));
+      }
+      .what-circle {
+        fill: #fee71f;
+        filter: drop-shadow(0 4px 6px rgba(254, 231, 31, 0.2));
+      }
+
+      .active-why {
+        ring-color: #0047ba;
+        border-color: #0047ba;
+        background-color: #f0f7ff;
+      }
+      .active-how {
+        ring-color: #ff4d00;
+        border-color: #ff4d00;
+        background-color: #fff5f0;
+      }
+      .active-what {
+        ring-color: #fee71f;
+        border-color: #fee71f;
+        background-color: #fffdf0;
+      }
+
+      .tag-pill {
+        display: inline-block;
+        padding: 2px 10px;
+        border-radius: 99px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 min-h-screen flex flex-col items-center py-12 px-4">
+    <!-- Header -->
+    <header class="max-w-4xl w-full text-center mb-12">
+      <h1
+        class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 italic"
+      >
+        DOBLE<span class="text-[#ff4d00]">JOTA</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto italic">
+        Redefiniendo la identidad: de vendedores de productos a
+        <strong>creadores de conexiones tangibles</strong>.
+      </p>
+    </header>
+
+    <main class="max-w-6xl w-full grid lg:grid-cols-2 gap-16 items-start">
+      <!-- Sección Visual (SVG) -->
+      <div class="sticky top-12 space-y-8">
+        <div
+          class="relative bg-white p-8 rounded-3xl shadow-xl border border-slate-100"
+        >
+          <svg
+            viewBox="0 0 400 400"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-auto drop-shadow-2xl"
+          >
+            <!-- WHAT Layer -->
+            <g class="circle-group" onclick="focusSection('what')">
+              <circle cx="200" cy="200" r="180" class="what-circle" />
+              <text
+                x="200"
+                y="55"
+                text-anchor="middle"
+                fill="#1d1d1f"
+                font-weight="bold"
+                font-size="16"
+              >
+                WHAT
+              </text>
+            </g>
+            <!-- HOW Layer -->
+            <g class="circle-group" onclick="focusSection('how')">
+              <circle cx="200" cy="200" r="120" class="how-circle" />
+              <text
+                x="200"
+                y="115"
+                text-anchor="middle"
+                fill="white"
+                font-weight="bold"
+                font-size="16"
+              >
+                HOW
+              </text>
+            </g>
+            <!-- WHY Layer -->
+            <g class="circle-group" onclick="focusSection('why')">
+              <circle cx="200" cy="200" r="60" class="why-circle" />
+              <text
+                x="200"
+                y="206"
+                text-anchor="middle"
+                fill="white"
+                font-weight="bold"
+                font-size="16"
+              >
+                WHY
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Frase Fuerza Táctil -->
+        <div
+          class="bg-gradient-to-r from-slate-900 to-slate-800 p-6 rounded-2xl text-white shadow-lg transform -rotate-1"
+        >
+          <h4
+            class="text-[#fee71f] font-bold uppercase tracking-widest text-sm mb-2"
+          >
+            Nuestra Promesa
+          </h4>
+          <p class="text-2xl font-light italic leading-tight">
+            "Calidad que puedes
+            <span class="font-bold border-b-2 border-[#ff4d00]">tocar</span>"
+          </p>
+        </div>
+      </div>
+
+      <!-- Sección de Contenido -->
+      <div class="space-y-8">
+        <!-- WHY Section -->
+        <section
+          id="why"
+          class="p-6 rounded-2xl border-l-8 border-[#0047ba] bg-white shadow-sm transition-all duration-300"
+        >
+          <span class="tag-pill bg-[#0047ba] text-white">Propósito</span>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3 uppercase">Why</h2>
+          <p class="text-slate-700 leading-relaxed mb-4 font-medium">
+            Creemos que en un mundo saturado de interacciones digitales, las
+            conexiones reales y duraderas se construyen a través de lo físico.
+          </p>
+          <p class="text-slate-600 text-sm">
+            Existimos para hacer que las marcas sean memorables, transformando
+            una identidad abstracta en algo tangible que las personas valoran y
+            conservan.
+          </p>
+        </section>
+
+        <!-- HOW Section -->
+        <section
+          id="how"
+          class="p-6 rounded-2xl border-l-8 border-[#ff4d00] bg-white shadow-sm transition-all duration-300"
+        >
+          <span class="tag-pill bg-[#ff4d00] text-white">Diferenciación</span>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3 uppercase">How</h2>
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Lo logramos mediante una <strong>curaduría obsesiva</strong> de
+            materiales y un proceso de personalización de alta precisión.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-slate-600">
+              <span class="text-[#ff4d00] font-bold">•</span>
+              <span
+                ><strong>Selección Táctil:</strong> Acabados soft-touch, metales
+                sólidos y textiles de alto gramaje que se sienten bien al
+                tacto.</span
+              >
+            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-600">
+              <span class="text-[#ff4d00] font-bold">•</span>
+              <span
+                ><strong>Precisión Técnica:</strong> Técnicas de marcado
+                indelebles que aseguran que la calidad visual coincida con la
+                física.</span
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- WHAT Section -->
+        <section
+          id="what"
+          class="p-6 rounded-2xl border-l-8 border-[#fee71f] bg-white shadow-sm transition-all duration-300"
+        >
+          <span class="tag-pill bg-[#fee71f] text-slate-900">Resultado</span>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3 uppercase">What</h2>
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Soluciones integrales de merchandising de alta gama que generan
+            orgullo de pertenencia.
+          </p>
+          <div
+            class="grid grid-cols-2 gap-3 text-xs font-semibold text-slate-500 uppercase tracking-tighter"
+          >
+            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+              🖋️ Escritura Fluida
+            </div>
+            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+              👕 Suavidad Premium
+            </div>
+            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+              💻 Acabados Elegantes
+            </div>
+            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+              🎁 Regalos con Alma
+            </div>
+          </div>
+        </section>
+
+        <!-- Marketing Application -->
+        <div class="mt-12 pt-8 border-t border-slate-200">
+          <h3
+            class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2"
+          >
+            <svg
+              class="w-6 h-6 text-[#ff4d00]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+              ></path>
+            </svg>
+            Puntos de Contacto "Táctiles"
+          </h3>
+          <div class="space-y-4">
+            <div
+              class="group bg-white p-4 rounded-xl border border-slate-200 hover:border-[#ff4d00] transition-colors"
+            >
+              <p class="text-xs font-bold text-[#ff4d00] uppercase">
+                En Muestrarios
+              </p>
+              <p class="text-sm text-slate-700 italic mt-1">
+                "No solo mires el diseño, siente la textura. Esto es calidad que
+                puedes tocar."
+              </p>
+            </div>
+            <div
+              class="group bg-white p-4 rounded-xl border border-slate-200 hover:border-[#ff4d00] transition-colors"
+            >
+              <p class="text-xs font-bold text-[#ff4d00] uppercase">
+                En Ventas
+              </p>
+              <p class="text-sm text-slate-700 italic mt-1">
+                "La competencia ofrece algo que se ve bien en foto; nosotros
+                entregamos lo que tu cliente querrá sostener todos los días."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="mt-20 text-slate-400 text-sm italic">
+      Doblejota &copy; 2024 - Estrategia de Marca Evolucionada
+    </footer>
+
+    <script>
+      function focusSection(id) {
+        // Reset all sections
+        document.querySelectorAll("section").forEach((s) => {
+          s.style.transform = "scale(1)";
+          s.classList.remove(
+            "active-why",
+            "active-how",
+            "active-what",
+            "ring-4",
+          );
+        });
+
+        // Highlight targeted section
+        const el = document.getElementById(id);
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.style.transform = "scale(1.05)";
+        el.classList.add("ring-4", "active-" + id);
+      }
+    </script>
+  </body>
+</html>
