@@ -30,25 +30,40 @@ $books = [
  * @param mixed $value El valor esperado
  * @return array Arreglo filtrado
  */
-function filter($items, $key, $value)
+// function filter($items, $key, $value)
+// {
+//     $filterItems = [];
+//     foreach ($items as $item) {
+//         if ($item[$key] === $value) {
+//             $filterItems[] = $item;
+//         }
+//     }
+//     return $filterItems;
+// };
+
+function filter($items, $fn)
 {
     $filterItems = [];
     foreach ($items as $item) {
-        if ($item[$key] === $value) {
+        if ($fn($item)) {
             $filterItems[] = $item;
         }
     }
     return $filterItems;
 };
 
+
 // $filteredBooks = filter($books, 'author', 'Andy Weir'); 
 
 /** * Filtrado dinámico usando la función nativa de PHP
  * Condición: Libros publicados hasta el año 2000 y del autor Douglas Adams
  */
+// $filteredBooks = filter($books, function ($book) {
+//     return $book['releaseYear'] <= 2000 && $book['author'] === 'Douglas Adams';
+// })
 $filteredBooks = array_filter($books, function ($book) {
-    return $book['releaseYear'] <= 2000 && $book['author'] === 'Douglas Adams';
-})
+    return $book['author'] === 'Andy Weir';
+});
 
 ?>
 
